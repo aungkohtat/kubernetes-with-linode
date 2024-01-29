@@ -11,12 +11,12 @@ git clone https://github.com/aungkohtat/kubernetes-with-linode.git
 
 cd kubernetes-with-linode
 
-## Add Linode Token
+## 2. Add Linode Token
 ```bash
 echo "linode_api_token=\"YOUR_API_KEY\"" >> terraform.tfvars
 ```
 
-## 2. Initialize Terraform
+## 3. Initialize Terraform
 ```bash
  Initialize Terraform
 ```
@@ -43,7 +43,7 @@ commands will detect it and remind you to do so if necessary.
 gitpod /workspace/kubernetes-with-linode/terraform-setup (main) $ 
 ```
 
-## 2. Terraform Plan
+## 4. Terraform Plan
 - `terraform plan`
 
 ```bash
@@ -98,7 +98,7 @@ Plan: 2 to add, 0 to change, 0 to destroy.
 Note: You didn't use the -out option to save this plan, so Terraform can't guarantee to take exactly these actions if you run "terraform apply" now.
 gitpod /workspace/kubernetes-with-linode/terraform-setup (main) $ 
 ```
-## 3. Check Terraform Validete
+## 5. Check Terraform Validete
 - `terraform validate`
 
 ```bash
@@ -109,17 +109,17 @@ gitpod /workspace/kubernetes-with-linode/terraform-setup (main) $
 ```
 
 
-## 3. Terraform your Kubernetes Cluster
+## 6. Terraform your Kubernetes Cluster
 ```bash
 terraform apply
 ```
-## 4. Set your KUBECONFIG Environment Variable
+## 7. Set your KUBECONFIG Environment Variable
 
 ```bash
 export KUBECONFIG="./.kube/kubeconfig.yaml"
 ```
 
-## 4. Check Kubernetes Cluster Nodes
+## 8. Check Kubernetes Cluster Nodes
 ```bash
 gitpod /workspace/kubernetes-with-linode/terraform-setup (main) $ kubectl get nodes
 NAME                            STATUS   ROLES    AGE     VERSION
@@ -127,7 +127,7 @@ lke153384-224476-47af680d0000   Ready    <none>   6m42s   v1.28.3
 lke153384-224476-533bbba10000   Ready    <none>   6m48s   v1.28.3
 lke153384-224476-59a2b8e10000   Ready    <none>   6m44s   v1.28.3
 ```
-## 5. Deploy your first app
+## 9. Deploy your first app
 -`kubectl apply -f k8s.yaml`
 
 ```bash
@@ -142,5 +142,5 @@ cfe-nginx-deployment-78b5c49779-ztvnx   1/1     Running   0          8s
 gitpod /workspace/kubernetes-with-linode/terraform-setup (main) $ 
 ```
 
-## Clean-up
+## 10. Clean-up
 - `terraform apply -destroy -auto-approve`
